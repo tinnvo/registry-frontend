@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Switch from '@material-ui/core/Switch'
+import Typography from '@material-ui/core/Typography'
+import withTheme from './DefaultTheme'
 
-function App() {
+const App = ({ toggleLightDarkMode }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <FormControlLabel control={<Switch onClick={toggleLightDarkMode} />} />
+      <Typography>body1</Typography>
     </div>
-  );
+  )
 }
 
-export default App;
+const ThemedApp = withTheme(App)
+
+export default ThemedApp
